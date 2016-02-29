@@ -1,12 +1,12 @@
 # fuse-test
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
-
 ## Build & development
-
+Run `npm install`
+Run `bower install`
 Run `grunt` for building and `grunt serve` for preview.
-
+##Running with docker
+Run `docker build .`
+Run `docker run -d -p 9000:9000 -p 35729:35729 <imageid>`
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
