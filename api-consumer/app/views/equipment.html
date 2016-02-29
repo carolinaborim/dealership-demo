@@ -1,0 +1,50 @@
+<div class="jumbotron col-md-12">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Equipment {{equipment.identificationNumber}}
+		</div>
+		<div class="panel-body">
+			<div>
+				<div class="col-md-3" style="margin-top:10px">
+					<span class="label label-danger">{{equipment.severity_2}}</span>
+					<span class="label label-warning">{{equipment.severity_1}}</span>
+					<span class="label label-info">{{equipment.severity_0}}</span>
+				</div>
+				<div class="col-md-4">
+					<div style="font-size:8pt">
+						{{brand.name}} {{model.name}}
+					</div>
+					<div style="font-size:6pt;">
+						{{equipment.identificationNumber}}
+					</div>
+					<div style="font-size:6pt">
+						{{equipment.description}}
+					</div>
+				</div>
+				<div class="col-md-1" style="margin-top:10px">
+					{{equipment.serviceLevel}}
+				</div>
+				<div class="col-md-2" style="font-size:8pt;margin-top:10px">
+					No Contact
+				</div>
+				<div class="col-md-2" style="margin-top:10px">
+					{{owner.name}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Last geo positions
+		</div>
+		<div class="panel-body">
+			<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+				<ui-gmap-polygon static="true" ng-repeat="p in polygons track by p.id" path="p.path" stroke="p.stroke" visible="p.visible"
+                 geodesic="p.geodesic" fill="p.fill" fit="false" editable="p.editable" draggable="p.draggable">
+                 </ui-gmap-polygon>
+				<ui-gmap-markers models="markers" coords="'coords'" options="'options'" icon="'icon'" doRebuildAll="markers">
+				</ui-gmap-markers>
+	</ui-gmap-google-map>
+</div>
+</div>
+</div>
