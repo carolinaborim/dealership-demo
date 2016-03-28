@@ -12,12 +12,12 @@
  	var equipmentId = $routeParams.id;
  	//init map
  	$scope.map = {
- 		center:{ 
+ 		center:{
  			latitude: 45,
  			longitude: -73
  		},
  		zoom: 1,
- 		bounds: {} 
+ 		bounds: {}
  	};
 
  	//get equipment by id
@@ -32,11 +32,11 @@
  	ApiService.getIssueOccurencesByEquipmentId(equipmentId).then(function(response){
  		var linkedAlarms = response.linked.alarmDetails;
  		linkedAlarms.forEach( function(alarmDetail) {
- 			var severityName = 'severity_' + alarmDetail.severity; 
+ 			var severityName = 'severity_' + alarmDetail.severity;
  			if ($scope.equipment[severityName]) {
  				$scope.equipment[severityName]++;
- 			}else {
- 				$scope.equipment[severityName] = 1;									
+ 			} else {
+ 				$scope.equipment[severityName] = 1;
  			}
  		});
  	});
@@ -104,11 +104,11 @@
  				});
  			});
  			if(markers.length){
- 				$scope.map = { 
- 					center: 
- 					{ 
+ 				$scope.map = {
+ 					center:
+ 					{
  						latitude: markers[0].coords.latitude,
- 						longitude: markers[0].coords.longitude 
+ 						longitude: markers[0].coords.longitude
  					},
  					zoom: 50,
  					bounds: {}

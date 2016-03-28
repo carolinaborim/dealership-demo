@@ -49,8 +49,24 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
   border-bottom: 1px solid #e5e5e5;
+
+  .panel {
+    .panel-heading {
+      text-align: center;
+    }
+
+    .panel-body {
+      .severity-labels {
+        margin-top: 10px;
+      }
+      dd {
+        dl, dt {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
 
   .btn {
     font-size: 21px;
@@ -67,7 +83,7 @@ body {
   }
 }
 
-.angular-google-map-container { 
+.angular-google-map-container {
   height: 400px;
 }
 

@@ -5,32 +5,31 @@
 		</div>
 		<div class="panel-body">
 			<div>
-				<div class="col-md-3" style="margin-top:10px">
+				<div class="severity-labels">
 					<span class="label label-danger">{{equipment.severity_2}}</span>
 					<span class="label label-warning">{{equipment.severity_1}}</span>
 					<span class="label label-info">{{equipment.severity_0}}</span>
 				</div>
-				<div class="col-md-4">
-					<div style="font-size:8pt">
-						{{brand.name}} {{model.name}}
-					</div>
-					<div style="font-size:6pt;">
-						{{equipment.identificationNumber}}
-					</div>
-					<div style="font-size:6pt">
-						Description: {{equipment.description}}
-					</div>
-				</div>
-				<div class="col-md-1" style="margin-top:10px">
-					Level: {{equipment.serviceLevel}}
-				</div>
-				<div class="col-md-2" style="font-size:8pt;margin-top:10px">
-					No Contact
-				</div>
-				<div class="col-md-2" style="margin-top:10px">
-					{{owner.name}}
-				</div>
-			</div>
+
+				<dl class="dl-horizontal">
+					<dt>Model</dt>
+					<dd>{{brand.name}} {{model.name}}</dd>
+
+					<dt>Id</dt>
+					<dd>{{equipment.identificationNumber}}</dd>
+
+					<dt>Description</dt>
+					<dd>{{equipment.description}}</dd>
+
+					<dt>Service level</dt>
+					<dd>{{equipment.serviceLevel}}</dd>
+
+					<dt>Contact</dt>
+					<dd>No contact</dd>
+
+					<dt>Owner</dt>
+					<dd>{{owner.name}}</dd>
+				</dl>
 		</div>
 	</div>
 	<div class="panel panel-default">
