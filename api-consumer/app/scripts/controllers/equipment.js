@@ -26,6 +26,7 @@
  		$scope.brand = response.linked.brands[0];
  		$scope.model = response.linked.models[0];
  		$scope.owner = response.linked.owners[0];
+    $scope.dealer = response.linked.dealers[0];
  	});
 
  	//get equipment issues
@@ -83,6 +84,11 @@
 
  		$scope.polygons = polygons;
  	});
+
+  ApiService.getEngineHours().then(function(response) {
+    console.log('engine hours', response);
+    $scope.engineHours = response.meta.aggregations.equip_agg[0].spn_ag[0].spn_latest_ag[0].value / 3600; // convert seconds to hours
+  });
 
  	$scope.$watch(function() {
  		return $scope.map.bounds;

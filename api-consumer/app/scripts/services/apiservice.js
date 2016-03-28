@@ -21,10 +21,11 @@
  		});
  		return request;
  	}
+
  	function getEquipmentById(id) {
 		var request = $http({
  			method: 'GET',
- 			url: Config.FUSE_TRACKERS_URL + '/equipment/'+id+'?include=model,owner,tracker,model.equipmentType,model.series,model.series.brand'
+ 			url: Config.FUSE_TRACKERS_URL + '/equipment/'+id+'?include=model,owner,tracker,dealer,model.equipmentType,model.series,model.series.brand'
  		}).then(function (response) {
  			return response.data;
  		});
