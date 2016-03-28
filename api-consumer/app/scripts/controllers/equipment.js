@@ -87,7 +87,7 @@
 
   ApiService.getEngineHours().then(function(response) {
     console.log('engine hours', response);
-    $scope.engineHours = response.meta.aggregations.equip_agg[0].spn_ag[0].spn_latest_ag[0].value / 3600; // convert seconds to hours
+    $scope.engineHours = parseInt(response.meta.aggregations.equip_agg[0].spn_ag[0].spn_latest_ag[0].value / 3600); // convert seconds to hours
   });
 
  	$scope.$watch(function() {

@@ -31,7 +31,7 @@
 			aggs.forEach( function(agg) {
 				var internAggs = agg.spn_ag[0].spn_latest_ag;
 				internAggs.forEach( function(internAgg) {
-					engineHours[agg.key] = parseInt(internAgg.value);
+					engineHours[agg.key] = parseInt(internAgg.value / 3600);
 				});
 			});
 			//decorate equipments with engine hours and owner names
@@ -59,11 +59,11 @@
 					equipments.forEach( function(equipment, n) {
 						if(equipment.id === data.equipmentId){
 							var severityNumber = alarmDetailsByIssue[0].severity;
-							var severityName = 'severity_' + severityNumber; 
+							var severityName = 'severity_' + severityNumber;
 							if (equipments[n][severityName]) {
 								equipments[n][severityName]++;
 							}else {
-								equipments[n][severityName] = 1;									
+								equipments[n][severityName] = 1;
 							}
 						}
 					});
