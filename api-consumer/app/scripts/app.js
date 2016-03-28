@@ -10,13 +10,7 @@
  */
 angular
   .module('fuseTestApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'uiGmapgoogle-maps'
+    'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -34,4 +28,3 @@ angular
         redirectTo: '/'
       });
   });
-  
