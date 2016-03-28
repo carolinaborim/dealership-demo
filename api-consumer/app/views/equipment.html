@@ -37,13 +37,16 @@
 			Last geo positions
 		</div>
 		<div class="panel-body">
-			<ui-gmap-google-map center='map.center' zoom='map.zoom'>
-				<ui-gmap-polygon static="true" ng-repeat="p in polygons track by p.id" path="p.path" stroke="p.stroke" visible="p.visible"
-                 geodesic="p.geodesic" fill="p.fill" fit="false" editable="p.editable" draggable="p.draggable">
-                 </ui-gmap-polygon>
-				<ui-gmap-markers models="markers" coords="'coords'" options="'options'" icon="'icon'" doRebuildAll="markers">
-				</ui-gmap-markers>
-	</ui-gmap-google-map>
-</div>
-</div>
+			Coordinate {{trackingPoint.location.coordinates}}
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Tracking Points
+		</div>
+		<div class="panel-body">
+			Bla
+		</div>
+	</div>
 </div>

@@ -84,37 +84,14 @@
  		$scope.polygons = polygons;
  	});
 
- 	//create markers
- 	$scope.markers = [];
  	$scope.$watch(function() {
  		return $scope.map.bounds;
  	}, function() {
- 		var markers = [];
  		ApiService.getTrackingPointsByEquipmentId(equipmentId).then(function(response){
  			console.log('tracking points', response);
- 			var trackingPoints = response.trackingPoints;
- 			trackingPoints.forEach( function(trackingPoint, n) {
- 				markers.push({
- 					id: n,
- 					coords: {
- 						latitude: trackingPoint.location.coordinates[1],
- 						longitude: trackingPoint.location.coordinates[0]
- 					},
- 					icon: 'http://icons.iconarchive.com/icons/fatcow/farm-fresh/16/tractor-icon.png'
- 				});
- 			});
- 			if(markers.length){
- 				$scope.map = {
- 					center:
- 					{
- 						latitude: markers[0].coords.latitude,
- 						longitude: markers[0].coords.longitude
- 					},
- 					zoom: 50,
- 					bounds: {}
- 				};
- 				$scope.markers = markers;
- 			}
+      if(response.trackingPoints.length > 0) {
+        $scope.trackingPoint = response.trackingPoints[0];
+      }
  		});
  	}, true);
  });
