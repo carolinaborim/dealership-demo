@@ -15,6 +15,9 @@
  		var equipments = response.equipment;
     var owners = response.linked.owners;
  		var dealers = response.linked.dealers;
+    var trackingPoints = {};
+    var duties = {};
+    var states = {};
     var ownerNames = [];
  		var dealerNames = [];
  		console.log(response);
@@ -30,21 +33,34 @@
 		//get engine hours
 		ApiService.getEngineHours().then(function(response) {
 			console.log('engine hours', response);
+
+      response.linked.trackingPoints.forEach( function(trackingPoint) {
+  			trackingPoints[trackingPoint.id] = trackingPoint;
+  		});
+
+      response.linked.duties.forEach( function(duty) {
+  			duties[duty.id] = duty;
+  		});
+
 			var engineHours = [];
 			var aggs = response.meta.aggregations.equip_agg;
 			console.log(response);
+
 			//extract engine hours from aggregation
 			aggs.forEach( function(agg) {
 				var internAggs = agg.spn_ag[0].spn_latest_ag;
-				internAggs.forEach( function(internAgg) {
-					engineHours[agg.key] = parseInt(internAgg.value / 3600);
-				});
+        var trackingPoint = trackingPoints[internAggs[0].links.trackingPoint];
+        var duty = duties[trackingPoint.links.duty];
+
+				engineHours[agg.key] = parseInt(internAggs[0].value / 3600);
+        states[agg.key] = duty.status;
 			});
 			//decorate equipments with engine hours and owner names
 			equipments.forEach( function(equipment, n) {
         equipments[n].owner_name = ownerNames[equipment.links.owner];
 				equipments[n].dealer_name = dealerNames[equipment.links.dealer];
 				equipments[n].engineHours = engineHours[equipment.id];
+        equipments[n].status = states[equipment.id];
 			});
 		});
 
