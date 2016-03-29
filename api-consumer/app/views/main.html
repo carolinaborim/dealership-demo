@@ -6,20 +6,15 @@
     <div class="panel-body">
       <table class="table table-striped">
         <thead class="thead-inverse">
-          <td>Severity</td>
           <td>Equipament</td>
           <td>Service Level</td>
           <td>Hours</td>
           <td>Status</td>
-          <td>Owner</td> 
+          <td>Owner</td>
+          <td>Dealer</td>
         </thead>
         <tbody>
           <tr ng-repeat="equipment in equipments">
-            <td class="col-md-2">
-              <span class="label label-danger">{{equipment.severity_2}}</span>
-              <span class="label label-warning">{{equipment.severity_1}}</span>
-              <span class="label label-info">{{equipment.severity_0}}</span>
-            </td>
             <td><a href="#/equipment/{{equipment.id}}">{{equipment.description}}</a> <br/>
              {{equipment.identificationNumber}}
            </td>
@@ -27,6 +22,7 @@
            <td>{{equipment.engineHours}}</td>
            <td>No Contact</td>
            <td>{{equipment.owner_name}}</td>
+           <td>{{equipment.dealer_name}}</td>
          </tr>
        </tbody>
      </table>

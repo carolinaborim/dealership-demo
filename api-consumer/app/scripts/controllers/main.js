@@ -13,12 +13,18 @@
  	ApiService.getEquipments().then(function(response){
  		console.log('equipments', response);
  		var equipments = response.equipment;
- 		var owners = response.linked.owners;
- 		var ownerNames = [];
+    var owners = response.linked.owners;
+ 		var dealers = response.linked.dealers;
+    var ownerNames = [];
+ 		var dealerNames = [];
  		console.log(response);
 		//extract owner names from relations
 		owners.forEach( function(owner) {
 			ownerNames[owner.id] = owner.name;
+		});
+
+    dealers.forEach( function(dealer) {
+			dealerNames[dealer.id] = dealer.name;
 		});
 
 		//get engine hours
@@ -36,7 +42,8 @@
 			});
 			//decorate equipments with engine hours and owner names
 			equipments.forEach( function(equipment, n) {
-				equipments[n].owner_name = ownerNames[equipment.links.owner];
+        equipments[n].owner_name = ownerNames[equipment.links.owner];
+				equipments[n].dealer_name = dealerNames[equipment.links.dealer];
 				equipments[n].engineHours = engineHours[equipment.id];
 			});
 		});

@@ -15,7 +15,7 @@
  	function getEquipments() {
  		var request = $http({
  			method: 'GET',
- 			url: Config.FUSE_TRACKERS_URL + '/equipment?include=model,owner,tracker,model.equipmentType,model.series,model.series.brand'
+ 			url: Config.FUSE_TRACKERS_URL + '/equipment?include=model,owner,dealer,tracker,model.equipmentType,model.series,model.series.brand'
  		}).then(function (response) {
  			return response.data;
  		});
