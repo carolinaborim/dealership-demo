@@ -23,3 +23,9 @@ The following command can be used to run the demo app:
 ```
 $ OPENAM_USERNAME=your_email OPENAM_PASSWORD=your_password API_ID=your_id API_SECRET=your_secret npm start
 ```
+
+## Deploying on Heroku PAAS
+
+Visit this URL:
+
+https://heroku.com/deploy?template=https://github.com/agco-fuse/dealership-demo-node
