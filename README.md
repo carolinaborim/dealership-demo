@@ -2,7 +2,7 @@
 
 ## Setup the environment
 
-Run `npm run setup`
+Run `npm install`
 
 ### Environment variables
 
