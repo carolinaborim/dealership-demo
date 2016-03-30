@@ -3,5 +3,19 @@
   "description": "Accessing the Fuse API sandbox as a dealership using Node.js",
   "repository": "https://github.com/agco-fuse/dealership-demo-node",
   "logo": "http://www.agcocorp.com/content/dam/agcocorp/Our%20Brands/Fuse%20Technology/Fuse_logo_with_circle-R_274x220.jpg",
-  "keywords": ["precision agriculture", "telemetry", "node", "express"]
+  "keywords": ["precision agriculture", "telemetry", "node", "express"],
+  "env": {
+    "API_ID": {
+      "description": "Your dev@agco login email"
+    },
+    "API_SECRET": {
+      "description": "Your dev@agco password"
+    },
+    "OPENAM_USERNAME": {
+      "description": "Your dev@agco API id"
+    },
+    "OPENAM_PASSWORD": {
+      "description": "Your dev@agco API secret"
+    }
+  }
 }
