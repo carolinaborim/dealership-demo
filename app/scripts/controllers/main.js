@@ -21,10 +21,6 @@
     var ownerNames = [];
  		var dealerNames = [];
  		console.log(response);
-		//extract owner names from relations
-		owners.forEach( function(owner) {
-			ownerNames[owner.id] = owner.name;
-		});
 
     dealers.forEach( function(dealer) {
 			dealerNames[dealer.id] = dealer.name;

@@ -25,7 +25,6 @@
  		$scope.equipment = response.equipment[0];
  		$scope.brand = response.linked.brands[0];
  		$scope.model = response.linked.models[0];
- 		$scope.owner = response.linked.owners[0];
     $scope.dealer = response.linked.dealers[0];
  	});
 
