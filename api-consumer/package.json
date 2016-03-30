@@ -42,7 +42,8 @@
     "test": "karma start test/karma.conf.js",
     "start": "npm run build-sass && node index.js",
     "build-sass": "npm run clean-css && compass compile --import-path ./app/bower_components --sass-dir ./app/styles --css-dir ./app/styles/",
-    "clean-css": "rm -rf ./app/styles/*.css"
+    "clean-css": "rm -rf ./app/styles/*.css",
+    "setup": "npm install && bower install"
   },
   "dependencies": {
     "express": "^4.13.4",

@@ -1,12 +1,25 @@
-# fuse-test
+# dev@agco Fuse Demo MVP1
 
-## Build & development
-Run `npm install`
-Run `bower install`
-Run `grunt` for building and `grunt serve` for preview.
-##Running with docker
-Run `docker build .`
-Run `docker run -d -p 9000:9000 -p 35729:35729 <imageid>`
-## Testing
+## Setup the environment
 
-Running `grunt test` will run the unit tests with karma.
+Run `npm run setup`
+
+### Environment variables
+
+The following environment variables must be set
+
+**OPENAM_USERNAME**: Your dev@agco login email
+
+**OPENAM_PASSWORD**: Your dev@agco password
+
+**API_ID**: Your dev@agco API id
+
+**API_SECRET**: Your dev@agco API secret
+
+## Run the application
+
+The following command can be used to run the demo app:
+
+```
+$ OPENAM_USERNAME=your_email OPENAM_PASSWORD=your_password API_ID=your_id API_SECRET=your_secret npm start
+```
