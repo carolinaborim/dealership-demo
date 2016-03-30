@@ -26,6 +26,10 @@ $ OPENAM_USERNAME=your_email OPENAM_PASSWORD=your_password API_ID=your_id API_SE
 
 ## Deploying on Heroku PAAS
 
-Visit this URL:
+Click this:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+Or visit this URL (replace the github.com repo name if you forked the project):
 
 https://heroku.com/deploy?template=https://github.com/agco-fuse/dealership-demo-node
