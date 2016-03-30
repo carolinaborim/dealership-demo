@@ -2,21 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>{{name}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-
-    <!-- endbuild -->
   </head>
   <body ng-app="fuseTestApp">
-    <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
@@ -35,8 +26,6 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">List</a></li>
-<!--               <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li> -->
             </ul>
           </div>
         </div>
@@ -47,7 +36,6 @@
     <div ng-view=""></div>
     </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
@@ -56,24 +44,22 @@
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
+
+       window.FUSE_EM_URL = '{{FUSE_EM_URL}}';
+       window.FUSE_TRACKERS_URL = '{{FUSE_TRACKERS_URL}}';
+       window.BEARER_TOKEN = '{{BEARER_TOKEN}}';
     </script>
 
-    <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/config.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/services/apiservice.js"></script>
-        <script src="scripts/controllers/equipment.js"></script>
-        <!-- <script src="scripts/services/equipmentfetch.js"></script> -->
-        <!-- endbuild -->
-</body>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/services/apiservice.js"></script>
+    <script src="scripts/controllers/equipment.js"></script>
+  </body>
 </html>

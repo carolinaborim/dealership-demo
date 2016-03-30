@@ -2,9 +2,9 @@
 
 angular.module('fuseTestApp')
 .factory('Config', function () {
-  var FUSE_TRACKERS_URL = 'http://localhost:9000';
-  var FUSE_EM_URL = 'http://fuse-em-api-dev.herokuapp.com';
-  var BEARER_TOKEN = 'Bearer 6c1fec33-7a48-46e7-a565-3dcc39a8c9f4';
+  var FUSE_TRACKERS_URL = window.FUSE_TRACKERS_URL;
+  var FUSE_EM_URL = window.FUSE_EM_URL;
+  var BEARER_TOKEN = window.BEARER_TOKEN;
 
   return {
     FUSE_TRACKERS_URL: FUSE_TRACKERS_URL,

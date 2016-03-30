@@ -45,6 +45,8 @@
     "clean-css": "rm -rf ./app/styles/*.css"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "mu2": "^0.5.20",
+    "request-promise": "^2.0.1"
   }
 }
