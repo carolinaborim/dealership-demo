@@ -1,19 +1,34 @@
 {
-  "name": "fusetest",
-  "private": true,
-  "engines": {
-    "node": ">=0.10.0"
-  },
+  "name": "agco-fuse-demo",
+  "version": "1.0.0",
+  "description": "Sample application showing how to use AGCO Fuse API",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node --use_strict index.js",
     "build-sass": "npm run clean-css && compass compile --import-path ./app/bower_components --sass-dir ./app/styles --css-dir ./app/styles/",
     "clean-css": "rm -rf ./app/styles/*.css",
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "test": "snyk test && npm run lint",
+    "lint": "eslint 'app/scripts/**/*.js' *.js"
   },
+  "keywords": [
+    "Fuse",
+    "AGCO"
+  ],
+  "author": "AGCO",
   "dependencies": {
-    "bower": "^1.7.7",
+    "bower": "^1.7.9",
     "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
     "mu2": "^0.5.20",
-    "request-promise": "^2.0.1"
+    "request-promise": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.8.0",
+    "eslint-config-agco": "0.0.3",
+    "eslint-config-angular": "^0.5.0",
+    "eslint-plugin-angular": "^1.0.0",
+    "eslint-plugin-standard": "^1.3.2",
+    "snyk": "^1.14.1"
   }
 }

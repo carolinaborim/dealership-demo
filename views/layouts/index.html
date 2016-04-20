@@ -33,18 +33,10 @@
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
+    <div ng-view></div>
     </div>
 
      <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-
        window.FUSE_EM_URL = '{{FUSE_EM_URL}}';
        window.FUSE_TRACKERS_URL = '{{FUSE_TRACKERS_URL}}';
        window.BEARER_TOKEN = '{{BEARER_TOKEN}}';
@@ -58,8 +50,8 @@
     <!-- endbower -->
     <script src="scripts/app.js"></script>
     <script src="scripts/config.js"></script>
-    <script src="scripts/controllers/main.js"></script>
     <script src="scripts/services/apiservice.js"></script>
+    <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/equipment.js"></script>
   </body>
 </html>
