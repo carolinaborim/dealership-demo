@@ -6,16 +6,16 @@
   "keywords": ["precision agriculture", "telemetry", "node", "express"],
   "env": {
     "API_ID": {
-      "description": "Your dev@agco login email"
-    },
-    "API_SECRET": {
-      "description": "Your dev@agco password"
-    },
-    "OPENAM_USERNAME": {
       "description": "Your dev@agco API id"
     },
-    "OPENAM_PASSWORD": {
+    "API_SECRET": {
       "description": "Your dev@agco API secret"
+    },
+    "OPENAM_USERNAME": {
+      "description": "Your dev@agco login email"
+    },
+    "OPENAM_PASSWORD": {
+      "description": "Your dev@agco password"
     }
   }
 }
