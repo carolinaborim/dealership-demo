@@ -109,4 +109,4 @@ function EquipmentController($routeParams, $scope, ApiService) {
   $scope.$watch(watchExpression, listener, true);
 }
 angular.module('fuseTestApp')
-.controller('EquipmentCtrl', EquipmentController);
+  .controller('EquipmentCtrl', EquipmentController);
