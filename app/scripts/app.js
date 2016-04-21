@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc overview
  * @name fuseTestApp
@@ -12,7 +10,7 @@ angular
   .module('fuseTestApp', [
     'ngRoute'
   ])
-  .config(function ($routeProvider) {
+  .config(($routeProvider) => {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
