@@ -6,43 +6,6 @@
  * Controller of the fuseTestApp
  */
 
-function getGeofenceAlarms(response) {
-  const geofenceAlarms = response.alarmDetails.filter((value) => {
-    return value.alarmType === 'geofenceAlarm' && value.enabled === true;
-  });
-
-  const polygons = [];
-  geofenceAlarms.forEach((alarm, n) => {
-    const coordinates = alarm.alarm.geospatial.coordinates[0];
-    const paths = [];
-    coordinates.forEach((coordinate) => {
-      paths.push({
-        latitude: coordinate[1],
-        longitude: coordinate[0]
-      });
-    });
-    polygons.push({
-      id: n,
-      path: paths,
-      stroke: {
-        color: '#6060FB',
-        weight: 3
-      },
-      editable: false,
-      draggable: false,
-      geodesic: false,
-      visible: true,
-      fill: {
-        color: '#ff0000',
-        opacity: 0.8
-      }
-    }
-    );
-  });
-
-  return polygons;
-}
-
 const getEngineHours = (response) => {
   const value = response
     .meta

@@ -18,7 +18,7 @@ function ApiService(Config, $http) {
       return response.data;
     });
     return request;
-  }
+  };
 
   const getEquipmentById = (id) => {
     const request = $http({
@@ -30,7 +30,7 @@ function ApiService(Config, $http) {
       return response.data;
     });
     return request;
-  }
+  };
 
   const getEngineHours = () => {
     const request = $http({
@@ -56,7 +56,7 @@ function ApiService(Config, $http) {
       return response.data;
     });
     return request;
-  }
+  };
 
   const getTrackingPointsByEquipmentId = (equipmentId) => {
     const request = $http({
@@ -67,7 +67,7 @@ function ApiService(Config, $http) {
       return response.data;
     });
     return request;
-  }
+  };
 
   return {
     getEquipments,
