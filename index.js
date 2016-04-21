@@ -4,16 +4,14 @@ const handlebars = require('express-handlebars');
 const requestPromise = require('request-promise');
 const app = express();
 
-const ensureConfigurationIsCorrect = (response) => {
+const isConfigurationCorrect = () => {
   if (!config.OPENAM_USERNAME ||
       !config.OPENAM_PASSWORD ||
       !config.API_ID ||
       !config.API_SECRET) {
-    response.status(500).send(
-      'Please configure all required environment variables'
-    );
-    throw new Error('Please configure all required environment variables');
+    return false;
   }
+  return true;
 };
 
 const authenticateAsDealer = () => {
@@ -46,8 +44,7 @@ const renderPage = (token, response) => {
 };
 
 const handleError = (err, response) => {
-  console.log(err);
-  response.status(500).send('Authentication error');
+  response.status(500).send(err);
 };
 
 app.engine('html', handlebars({
@@ -60,10 +57,13 @@ app.use(express.static('app'));
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 app.get('/', (request, response) => {
-  return new Promise((resolve) => {
-    resolve();
-  }).then(() => ensureConfigurationIsCorrect(response))
-    .then(authenticateAsDealer)
+  return new Promise((resolve, reject) => {
+    if (isConfigurationCorrect()) {
+      resolve();
+    } else {
+      reject('Please configure all required environment variables');
+    }
+  }).then(authenticateAsDealer)
     .then((token) => renderPage(token, response))
     .catch((err) => handleError(err, response));
 });
