@@ -1,3 +1,4 @@
+const config = require('./config.js');
 const express = require('express');
 const handlebars = require('express-handlebars');
 const request = require('request-promise');
@@ -11,20 +12,15 @@ app.set('view engine', 'html');
 app.use(express.static('app'));
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-const PORT = process.env.PORT || '8000';
-const FUSE_TRACKERS_URL = process.env.FUSE_TRACKERS_URL || 'https://agco-fuse-trackers-sandbox.herokuapp.com';
-const FUSE_EM_URL = process.env.FUSE_EM_URL || 'http://fuse-em-api-dev.herokuapp.com';
-const OPENAM_USERNAME = process.env.OPENAM_USERNAME;
-const OPENAM_PASSWORD = process.env.OPENAM_PASSWORD;
-const OPENAM_URL = process.env.OPENAM_URL || 'https://aaat.agcocorp.com/auth/oauth2/access_token';
-const API_ID = process.env.API_ID;
-const API_SECRET = process.env.API_SECRET;
 
 app.get('/', (req, res) => {
   return new Promise((resolve) => {
     resolve();
   }).then(() => {
-    if (!OPENAM_USERNAME || !OPENAM_PASSWORD || !API_ID || !API_SECRET) {
+    if (!config.OPENAM_USERNAME ||
+        !config.OPENAM_PASSWORD ||
+        !config.API_ID ||
+        !config.API_SECRET) {
       res.status(500).send(
         'Please configure all required environment variables'
       );
@@ -33,14 +29,14 @@ app.get('/', (req, res) => {
   }).then(() => {
     const options = {
       method: 'POST',
-      uri: OPENAM_URL,
+      uri: config.OPENAM_URL,
       qs: {
         realm: '/dealers',
-        username: OPENAM_USERNAME,
-        password: OPENAM_PASSWORD,
+        username: config.OPENAM_USERNAME,
+        password: config.OPENAM_PASSWORD,
         scope: 'cn mail agcoUUID',
-        client_id: API_ID,
-        client_secret: API_SECRET,
+        client_id: config.API_ID,
+        client_secret: config.API_SECRET,
         grant_type: 'password'
       }
     };
@@ -52,8 +48,8 @@ app.get('/', (req, res) => {
       });
   }).then((token) => {
     res.render('index', {
-      FUSE_TRACKERS_URL,
-      FUSE_EM_URL,
+      FUSE_TRACKERS_URL: config.FUSE_TRACKERS_URL,
+      FUSE_EM_URL: config.FUSE_EM_URL,
       BEARER_TOKEN: token
     });
   }).catch((err) => {
@@ -62,7 +58,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-  console.log(`http://localhost:${PORT}`);
+app.listen(config.PORT, () => {
+  console.log(`App listening on port ${config.PORT}`);
+  console.log(`http://localhost:${config.PORT}`);
 });
