@@ -74,22 +74,6 @@ function EquipmentController($routeParams, $scope, ApiService) {
     $scope.dealer = response.linked.dealers[0];
   });
 
-  ApiService.getIssueOccurencesByEquipmentId(equipmentId).then((response) => {
-    const linkedAlarms = response.linked.alarmDetails;
-    linkedAlarms.forEach((alarmDetail) => {
-      const severityName = `severity_${alarmDetail.severity}`;
-      if ($scope.equipment[severityName]) {
-        $scope.equipment[severityName]++;
-      } else {
-        $scope.equipment[severityName] = 1;
-      }
-    });
-  });
-
-  ApiService.getAlarmDetailsByEquipmentId(equipmentId)
-    .then(getGeofenceAlarms)
-    .then((polygons) => { $scope.polygons = polygons; });
-
   ApiService.getEngineHours()
     .then(getEngineHours)
     .then((engineHours) => { $scope.engineHours = engineHours; });
