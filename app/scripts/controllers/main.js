@@ -69,4 +69,4 @@ function MainController(ApiService, $scope) {
     });
 }
 angular.module('fuseTestApp')
-.controller('MainCtrl', MainController);
+  .controller('MainCtrl', MainController);
