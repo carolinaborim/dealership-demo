@@ -8,7 +8,7 @@
 function ApiService(Config, $http) {
   $http.defaults.headers.common.Authorization = Config.BEARER_TOKEN;
 
-  function getEquipments() {
+  const getEquipments = () => {
     const request = $http({
       method: 'GET',
       url: `${Config.FUSE_TRACKERS_URL}/equipment?` +
@@ -18,9 +18,9 @@ function ApiService(Config, $http) {
       return response.data;
     });
     return request;
-  }
+  };
 
-  function getEquipmentById(id) {
+  const getEquipmentById = (id) => {
     const request = $http({
       method: 'GET',
       url: `${Config.FUSE_TRACKERS_URL}/equipment/${id}?` +
@@ -30,9 +30,9 @@ function ApiService(Config, $http) {
       return response.data;
     });
     return request;
-  }
+  };
 
-  function getEngineHours() {
+  const getEngineHours = () => {
     const request = $http({
       method: 'GET',
       url: `${Config.FUSE_TRACKERS_URL}/trackingData/search?` +
@@ -56,45 +56,9 @@ function ApiService(Config, $http) {
       return response.data;
     });
     return request;
-  }
+  };
 
-  function getIssueOccurences() {
-    const request = $http({
-      method: 'GET',
-      url: `${Config.FUSE_EM_URL}/issueOccurrences?` +
-        'include=issue&isResolved=false&limit=0&' +
-        'sort=alert.timeOfOccurrence'
-    }).then((response) => {
-      return response.data;
-    });
-    return request;
-  }
-
-  function getIssueOccurencesByEquipmentId(equipmentId) {
-    const request = $http({
-      method: 'GET',
-      url: `${Config.FUSE_EM_URL}/issueOccurrences?` +
-        `alert.links.equipment=${equipmentId}&` +
-        'isResolved=false&' +
-        'include=issue,issue.alarmDetail&' +
-        'isResolved=true&sort=alert.timeOfOccurrence'
-    }).then((response) => {
-      return response.data;
-    });
-    return request;
-  }
-
-  function getAlarmDetails() {
-    const request = $http({
-      method: 'GET',
-      url: `${Config.FUSE_EM_URL}/alarmDetails`
-    }).then((response) => {
-      return response.data;
-    });
-    return request;
-  }
-
-  function getTrackingPointsByEquipmentId(equipmentId) {
+  const getTrackingPointsByEquipmentId = (equipmentId) => {
     const request = $http({
       method: 'GET',
       url: `${Config.FUSE_TRACKERS_URL}/trackingPoints?` +
@@ -103,29 +67,15 @@ function ApiService(Config, $http) {
       return response.data;
     });
     return request;
-  }
-
-  function getAlarmDetailsByEquipmentId(equipmentId) {
-    const request = $http({
-      method: 'GET',
-      url: `${Config.FUSE_EM_URL}/alarmDetails?` +
-        `alarm.links.equipment=${equipmentId}`
-    }).then((response) => {
-      return response.data;
-    });
-    return request;
-  }
+  };
 
   return {
     getEquipments,
     getEngineHours,
-    getIssueOccurences,
-    getAlarmDetails,
     getEquipmentById,
-    getIssueOccurencesByEquipmentId,
-    getTrackingPointsByEquipmentId,
-    getAlarmDetailsByEquipmentId
+    getTrackingPointsByEquipmentId
   };
 }
+
 angular.module('fuseTestApp')
   .factory('ApiService', ApiService);
