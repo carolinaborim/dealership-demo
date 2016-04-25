@@ -47,12 +47,38 @@ body {
   margin: 30px 0;
 }
 
+.panel-primary {
+  border-color: #AE132A;
+}
+
+.navbar-default {
+  background-color: #AE132A;
+}
+
+.navbar-default .navbar-brand {
+  color: #FFF;
+  &:hover {
+    text-decoration: underline;
+    color: #FFF;
+  }
+}
+
+.panel {
+  .panel-heading {
+    background-color: #AE132A;
+    text-align: center;
+  }
+}
+
+
 /* Main marketing message and sign up button */
 .jumbotron {
   border-bottom: 1px solid #e5e5e5;
 
   .panel {
     .panel-heading {
+
+      background: #AE132A;
       text-align: center;
     }
 

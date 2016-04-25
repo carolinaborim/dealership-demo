@@ -1,31 +1,29 @@
-<div class="jumbotron">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      Equipments
-    </div>
-    <div class="panel-body">
-      <table class="table table-striped">
-        <thead class="thead-inverse">
-          <td>Equipment</td>
-          <td>Service Level</td>
-          <td>Engine Hours</td>
-          <td>Status</td>
-          <td>Owner</td>
-          <td>Dealer</td>
-        </thead>
-        <tbody>
-          <tr ng-repeat="equipment in equipments">
-            <td><a href="#/equipment/{{equipment.id}}">{{equipment.description}}</a> <br/>
-              {{equipment.identificationNumber}}
-            </td>
-            <td>{{equipment.serviceLevel}}</td>
-            <td>{{equipment.engineHours}}</td>
-            <td>{{equipment.status}}</td>
-            <td>N/A</td>
-            <td>{{equipment.dealer_name}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Equipments
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead class="thead-inverse">
+        <td>Equipment</td>
+        <td>Service Level</td>
+        <td>Engine Hours</td>
+        <td>Status</td>
+        <td>Owner</td>
+        <td>Dealer</td>
+      </thead>
+      <tbody>
+        <tr ng-repeat="equipment in equipments">
+          <td><a href="#/equipment/{{equipment.id}}">{{equipment.description}}</a> <br/>
+            {{equipment.identificationNumber}}
+          </td>
+          <td>{{equipment.serviceLevel}}</td>
+          <td>{{equipment.engineHours}}</td>
+          <td>{{equipment.status}}</td>
+          <td>N/A</td>
+          <td>{{equipment.dealer_name}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
