@@ -8841,53 +8841,80 @@ body {
   margin: 30px 0;
 }
 
+/* line 50, main.scss */
+.panel-primary {
+  border-color: #AE132A;
+}
+
+/* line 54, main.scss */
+.navbar-default {
+  background-color: #AE132A;
+}
+
+/* line 58, main.scss */
+.navbar-default .navbar-brand {
+  color: #FFF;
+}
+/* line 60, main.scss */
+.navbar-default .navbar-brand:hover {
+  text-decoration: underline;
+  color: #FFF;
+}
+
+/* line 67, main.scss */
+.panel .panel-heading {
+  background-color: #AE132A;
+  text-align: center;
+}
+
 /* Main marketing message and sign up button */
-/* line 51, main.scss */
+/* line 75, main.scss */
 .jumbotron {
   border-bottom: 1px solid #e5e5e5;
 }
-/* line 55, main.scss */
+/* line 79, main.scss */
 .jumbotron .panel .panel-heading {
+  background: #AE132A;
   text-align: center;
 }
-/* line 60, main.scss */
+/* line 86, main.scss */
 .jumbotron .panel .panel-body .severity-labels {
   margin-top: 10px;
 }
-/* line 64, main.scss */
+/* line 90, main.scss */
 .jumbotron .panel .panel-body dd dl, .jumbotron .panel .panel-body dd dt {
   margin-top: 5px;
 }
-/* line 71, main.scss */
+/* line 97, main.scss */
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
 }
 
 /* Supporting marketing content */
-/* line 78, main.scss */
+/* line 104, main.scss */
 .marketing {
   margin: 40px 0;
 }
-/* line 81, main.scss */
+/* line 107, main.scss */
 .marketing p + h4 {
   margin-top: 28px;
 }
 
-/* line 86, main.scss */
+/* line 112, main.scss */
 .angular-google-map-container {
   height: 400px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* line 92, main.scss */
+  /* line 118, main.scss */
   .container {
     max-width: 730px;
   }
 
   /* Remove the padding we set earlier */
-  /* line 97, main.scss */
+  /* line 123, main.scss */
   .header,
   .marketing,
   .footer {
@@ -8896,13 +8923,13 @@ body {
   }
 
   /* Space out the masthead */
-  /* line 104, main.scss */
+  /* line 130, main.scss */
   .header {
     margin-bottom: 30px;
   }
 
   /* Remove the bottom border on the jumbotron for visual effect */
-  /* line 108, main.scss */
+  /* line 134, main.scss */
   .jumbotron {
     border-bottom: 0;
   }

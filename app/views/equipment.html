@@ -1,47 +1,51 @@
-<div class="jumbotron col-md-12">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      Equipment {{equipment.identificationNumber}}
-    </div>
-    <div class="panel-body">
-      <div>
-        <div class="severity-labels">
-          <span class="label label-danger">{{equipment.severity_2}}</span>
-          <span class="label label-warning">{{equipment.severity_1}}</span>
-          <span class="label label-info">{{equipment.severity_0}}</span>
-        </div>
-
-        <dl class="dl-horizontal">
-          <dt>Model</dt>
-          <dd>{{brand.name}} {{model.name}}</dd>
-
-          <dt>Id</dt>
-          <dd>{{equipment.identificationNumber}}</dd>
-
-          <dt>Description</dt>
-          <dd>{{equipment.description}}</dd>
-
-          <dt>Service level</dt>
-          <dd>{{equipment.serviceLevel}}</dd>
-
-          <dt>Owner</dt>
-          <dd>N/A</dd>
-
-          <dt>Dealer</dt>
-          <dd>{{dealer.name}}</dd>
-
-          <dt>Engine hours</dt>
-          <dd>{{engineHours}} hours</dd>
-        </dl>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Equipment {{equipment.identificationNumber}}
+  </div>
+  <div class="panel-body">
+    <div>
+      <div class="severity-labels">
+        <span class="label label-danger">{{equipment.severity_2}}</span>
+        <span class="label label-warning">{{equipment.severity_1}}</span>
+        <span class="label label-info">{{equipment.severity_0}}</span>
       </div>
-    </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Last geo positions
-      </div>
-      <div class="panel-body">
-        Coordinate {{trackingPoint.location.coordinates}}
+      <dl class="dl-horizontal">
+        <dt>Model</dt>
+        <dd>{{brand.name}} {{model.name}}</dd>
+
+        <dt>Id</dt>
+        <dd>{{equipment.identificationNumber}}</dd>
+
+        <dt>Description</dt>
+        <dd>{{equipment.description}}</dd>
+
+        <dt>Service level</dt>
+        <dd>{{equipment.serviceLevel}}</dd>
+
+        <dt>Owner</dt>
+        <dd>N/A</dd>
+
+        <dt>Dealer</dt>
+        <dd>{{dealer.name}}</dd>
+
+        <dt>Engine hours</dt>
+        <dd>{{engineHours}} hours</dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Last geo positions
+  </div>
+  <div class="panel-body">
+    <div>
+      <dl class="dl-horizontal">
+        <dt>Coordinate</dt>
+        <dd>{{trackingPoint.location.coordinates}}</dd>
       </div>
     </div>
   </div>
+</div>
