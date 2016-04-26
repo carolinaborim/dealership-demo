@@ -12,25 +12,25 @@
 
       <dl class="dl-horizontal">
         <dt>Model</dt>
-        <dd>{{brand.name}} {{model.name}}</dd>
+        <dd>{{ equipment.relationships.model.data.id }}</dd>
 
         <dt>Id</dt>
-        <dd>{{equipment.identificationNumber}}</dd>
+        <dd>{{ equipment.attributes.identificationNumber }}</dd>
 
         <dt>Description</dt>
-        <dd>{{equipment.description}}</dd>
+        <dd>{{ equipment.attributes.description }}</dd>
 
         <dt>Service level</dt>
-        <dd>{{equipment.serviceLevel}}</dd>
+        <dd>{{ equipment.attributes.serviceLevel }}</dd>
 
         <dt>Owner</dt>
         <dd>N/A</dd>
 
         <dt>Dealer</dt>
-        <dd>{{dealer.name}}</dd>
+        <dd>{{ equipment.relationships.dealer.data.id }}</dd>
 
         <dt>Engine hours</dt>
-        <dd>{{engineHours}} hours</dd>
+        <dd>{{ equipment.attributes.trackingData.ENGINE_HOURS }} hours</dd>
       </dl>
     </div>
   </div>
@@ -44,7 +44,7 @@
     <div>
       <dl class="dl-horizontal">
         <dt>Coordinate</dt>
-        <dd>{{trackingPoint.location.coordinates}}</dd>
+        <dd>{{ equipment.attributes.trackingPoint.location.coordinates }}</dd>
       </div>
     </div>
   </div>

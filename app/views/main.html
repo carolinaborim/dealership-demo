@@ -14,14 +14,14 @@
       </thead>
       <tbody>
         <tr ng-repeat="equipment in equipments">
-          <td><a href="#/equipment/{{equipment.id}}">{{equipment.description}}</a> <br/>
-            {{equipment.identificationNumber}}
+          <td><a href="#/equipment/{{ equipment.id }}">{{ equipment.attributes.description }}</a> <br/>
+            {{ equipment.attributes.identificationNumber }}
           </td>
-          <td>{{equipment.serviceLevel}}</td>
-          <td>{{equipment.engineHours}}</td>
-          <td>{{equipment.status}}</td>
+          <td>{{ equipment.attributes.serviceLevel }}</td>
+          <td>{{ equipment.attributes.trackingData.ENGINE_HOURS }}</td>
+          <td>{{ equipment.attributes.status }}</td>
           <td>N/A</td>
-          <td>{{equipment.dealer_name}}</td>
+          <td>{{ equipment.relationships.dealer.data.id }}</td>
         </tr>
       </tbody>
     </table>
