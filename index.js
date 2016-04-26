@@ -38,7 +38,7 @@ const authenticateAsDealer = () => {
 const renderPage = (token, response) => {
   response.render('index', {
     FUSE_TRACKERS_URL: config.FUSE_TRACKERS_URL,
-    FUSE_EM_URL: config.FUSE_EM_URL,
+    FUSE_EQUIPMENT_API_URL: config.FUSE_EQUIPMENT_API_URL,
     BEARER_TOKEN: token
   });
 };
