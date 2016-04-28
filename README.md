@@ -1,6 +1,6 @@
 # Dealership Demo
 
-[![Build Status](https://travis-ci.org/agco-fuse/dealership-demo-node.svg?branch=master)](https://travis-ci.org/agco-fuse/dealership-demo-node)
+[![Build Status](https://travis-ci.org/agco-fuse/dealership-demo-node.svg?branch=master)](https://travis-ci.org/agco-fuse/dealership-demo-node) [![Code Climate](https://codeclimate.com/github/agco-fuse/dealership-demo/badges/gpa.svg)](https://codeclimate.com/github/agco-fuse/dealership-demo)
 
 This is a sample application showing how to use the AGCO Fuse API.
 It is an web application that displays information about equipements, like the model and the engine hour.
