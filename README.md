@@ -1,4 +1,4 @@
-# dev@agco Fuse Demo MVP1
+# Dealership Demo
 
 This is a sample application showing how to use the AGCO Fuse API.
 It is an web application that displays information about equipements, like the model and the engine hour.
