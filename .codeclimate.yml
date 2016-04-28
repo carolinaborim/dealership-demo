@@ -18,3 +18,4 @@ ratings:
 exclude_paths:
 - node_modules/
 - app/bower_components/
+- app/styles/
