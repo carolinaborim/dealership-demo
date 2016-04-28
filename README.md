@@ -1,4 +1,4 @@
-# dev@agco Fuse Demo MVP1
+# Dealership Demo
 
 [![Build Status](https://travis-ci.org/agco-fuse/dealership-demo-node.svg?branch=master)](https://travis-ci.org/agco-fuse/dealership-demo-node)
 
