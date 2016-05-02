@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    Equipments
+    Equipment
   </div>
   <div class="panel-body">
     <table class="table table-striped">
@@ -13,7 +13,7 @@
         <td>Dealer</td>
       </thead>
       <tbody>
-        <tr ng-repeat="equipment in equipments">
+        <tr ng-repeat="equipment in equipment">
           <td><a href="#/equipment/{{ equipment.id }}">{{ equipment.attributes.description }}</a> <br/>
             {{ equipment.attributes.identificationNumber }}
           </td>
