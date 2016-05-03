@@ -6,11 +6,11 @@
  * Controller of the fuseTestApp
  */
 function MainController(ApiService, $scope) {
-  ApiService.getEquipments()
+  ApiService.getEquipment()
     .then((response) => {
       return response;
-    }).then((equipments) => {
-      $scope.equipments = equipments.data;
+    }).then((equipment) => {
+      $scope.equipment = equipment.data;
     });
 }
 angular.module('fuseTestApp')
