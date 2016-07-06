@@ -19,7 +19,6 @@ function EquipmentController($routeParams, $scope, ApiService) {
   ApiService.getEquipmentById(equipmentId).then((response) => {
     $scope.equipment = response.data;
   });
-
 }
 angular.module('fuseTestApp')
   .controller('EquipmentCtrl', EquipmentController);

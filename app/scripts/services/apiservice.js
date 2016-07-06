@@ -42,8 +42,6 @@ function ApiService(Config, $http) {
     getEquipmentById,
     getDealerById
   };
-
-
 }
 
 angular.module('fuseTestApp')
