@@ -21,17 +21,29 @@ function ApiService(Config, $http) {
   const getEquipmentById = (id) => {
     const request = $http({
       method: 'GET',
-      url: `${Config.FUSE_EQUIPMENT_API_URL}/equipment/${id}?`
+      url: `${Config.FUSE_EQUIPMENT_API_URL}/equipment/${id}`
     }).then((response) => {
       return response.data;
     });
     return request;
   };
 
+  const getDealerById = (dealerId) => {
+    return $http({
+      method: 'GET',
+      url: `${Config.DEALER_API_URL}/dealer/${dealerId}`
+    }).then((response) => {
+      return response.data.dealers[0];
+    });
+  };
+
   return {
     getEquipment,
-    getEquipmentById
+    getEquipmentById,
+    getDealerById
   };
+
+
 }
 
 angular.module('fuseTestApp')
