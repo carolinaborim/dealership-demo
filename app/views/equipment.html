@@ -49,3 +49,17 @@
     </div>
   </div>
 </div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    CAN variables
+  </div>
+  <div class="panel-body">
+    <div>
+      <dl class="dl-horizontal" ng-repeat="(canVariable, value) in
+        equipment.attributes.trackingData">
+        <dt>{{canVariable}} </dt>
+        <dd>{{value}}</dd>
+      </div>
+    </div>
+  </div>
+</div>
